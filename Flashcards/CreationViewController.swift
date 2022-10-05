@@ -28,14 +28,16 @@ class CreationViewController: UIViewController {
     
     @IBAction func didTapOnDone(_ sender: Any) {
         
-        let questionText = questionTextField.text
+        let questionText = questionTextField.text!
         
-        let answerText = answerTextField.text
+        let answerText = answerTextField.text!
         
-        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
+        flashcardsController.updateFlashcard(question: questionText, answer: answerText)
         
         dismiss(animated: true)
     }
+    
+  
     
     /*
     // MARK: - Navigation

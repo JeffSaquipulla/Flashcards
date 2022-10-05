@@ -16,12 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-EF-2UP">
+                                <rect key="frame" x="177" y="630" width="60" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+">
+                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="50"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Tta-y3-X8o" kind="presentation" id="rcG-z6-fmS"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAH-ad-IKg">
-                                <rect key="frame" x="66" y="329" width="310" height="148"/>
+                                <rect key="frame" x="36" y="261" width="343" height="229"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ORANGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="173-BP-GNY">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="148"/>
+                                        <rect key="frame" x="-2" y="0.0" width="347" height="232"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -29,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="what color is a tiger fur ? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGb-oz-Jyz">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="148"/>
+                                        <rect key="frame" x="-2" y="0.0" width="347" height="232"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -43,21 +54,11 @@
                                     <outletCollection property="gestureRecognizers" destination="2y0-vi-6TP" appends="YES" id="j3c-Sn-IFB"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-EF-2UP">
-                                <rect key="frame" x="191" y="617" width="60" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="+"/>
-                                <connections>
-                                    <segue destination="Tta-y3-X8o" kind="presentation" id="rcG-z6-fmS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="FrontLabel" destination="UGb-oz-Jyz" id="GeU-gW-vig"/>
                         <outlet property="backLabel" destination="173-BP-GNY" id="i7W-21-Jck"/>
                         <outlet property="frontLabel" destination="UGb-oz-Jyz" id="ZaW-Wg-TnU"/>
                     </connections>
@@ -84,12 +85,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KlV-Bz-eYr">
-                                        <rect key="frame" x="8" y="0.0" width="307" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="questionField:" destination="BeM-Tn-ueJ" eventType="editingDidEnd" id="rc6-O8-XM4"/>
                                             <action selector="questionField:" destination="MGK-G4-k3O" eventType="editingDidEnd" id="zBd-cN-v2T"/>
                                         </connections>
                                     </textField>
@@ -119,11 +119,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="AnswerFIeld" destination="rhm-vw-aLc" id="4dv-gB-6Lf"/>
-                        <outlet property="answerField" destination="rhm-vw-aLc" id="FZn-wE-qVu"/>
                         <outlet property="answerTextField" destination="rhm-vw-aLc" id="BSs-gz-Gc2"/>
-                        <outlet property="question" destination="KlV-Bz-eYr" id="V3Y-o5-yg4"/>
-                        <outlet property="questionField" destination="KlV-Bz-eYr" id="zqL-Fb-Qyi"/>
                         <outlet property="questionTextField" destination="KlV-Bz-eYr" id="cdQ-nm-dZS"/>
                     </connections>
                 </viewController>
