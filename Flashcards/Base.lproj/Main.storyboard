@@ -54,6 +54,24 @@
                                     <outletCollection property="gestureRecognizers" destination="2y0-vi-6TP" appends="YES" id="j3c-Sn-IFB"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvU-Nf-gu7">
+                                <rect key="frame" x="34" y="653" width="65" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Prev"/>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ayp-AO-n8f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiu-xW-gGx">
+                                <rect key="frame" x="311" y="653" width="84" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJc-ck-wrI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,6 +79,8 @@
                     <connections>
                         <outlet property="backLabel" destination="173-BP-GNY" id="i7W-21-Jck"/>
                         <outlet property="frontLabel" destination="UGb-oz-Jyz" id="ZaW-Wg-TnU"/>
+                        <outlet property="nextButton" destination="fiu-xW-gGx" id="UZC-CL-2yf"/>
+                        <outlet property="prevButton" destination="mvU-Nf-gu7" id="mk2-6c-CxJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
