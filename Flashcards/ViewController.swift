@@ -13,8 +13,6 @@ struct Flashcard {
 }
 
 class ViewController: UIViewController {
-
-   
     @IBOutlet weak var frontLabel: UILabel!
     @IBOutlet weak var backLabel: UILabel!
     
@@ -42,12 +40,41 @@ class ViewController: UIViewController {
         
     }
 
+    @IBOutlet weak var card: UIView!
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        //flipFlashcard()
-        frontLabel.isHidden = true
-        backLabel.isHidden = false 
+        flipFlashcard()
+        
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {self.frontLabel.isHidden = true})
     }
-    //func flipFlashcard()
+    
+    
+    func flipFlashcard(){
+        frontLabel.isHidden = true
+        backLabel.isHidden = false
+    }
+    
+    
+    func animateCardOut(){
+        UIView.animate(withDuration: 0.3, animations:{
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: {finished in
+            //update label
+            self.updateLabel()
+            
+            //run other animation
+            self.animateCardIn()
+        })
+    }
+    
+    func animateCardIn(){
+        
+        //start on the right side (don't animate this
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        //animate card going back to its orginal position
+        UIView.animate(withDuration:0.3){
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
         
     
     func updateFlashcard(question: String, answer: String) {
@@ -75,6 +102,7 @@ class ViewController: UIViewController {
         updateLabel()
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let navigationController = segue.destination as! UINavigationController
@@ -85,8 +113,6 @@ class ViewController: UIViewController {
     }
     
    
-    
-    
     @IBOutlet weak var prevButton: UIButton!
     @IBAction func didTapOnPrev(_ sender: Any) {
         
@@ -98,6 +124,8 @@ class ViewController: UIViewController {
         
         // update buttons
         updateNextPrevButtons()
+        
+        animateCardIn()
     }
    
     
@@ -114,7 +142,10 @@ class ViewController: UIViewController {
         // update buttons
         updateNextPrevButtons()
         
-    }
+        animateCardOut()
+
+
+}
     
     
     func updateNextPrevButtons() {
