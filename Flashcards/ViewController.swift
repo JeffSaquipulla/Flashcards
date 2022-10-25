@@ -30,7 +30,10 @@ class ViewController: UIViewController {
         
         //updateFlashcard(question: "What color is a tigers fur ?", answer:"Orange")
         if flashcards.count == 0 {
-        updateFlashcard(question: "How many stars does the american flag have?", answer:"50")
+        //updateFlashcard(question: "How many stars does the american flag have?", answer:"50")
+         updateFlashcard(question: "What color is a tigers fur ?", answer:"Orange")
+         updateFlashcard(question: "Who won the 2010 World Cup ?", answer:"Spain")
+         updateFlashcard(question: "What color is the Sun ?", answer:"Yellow")
         }else {
             updateLabel()
             updateNextPrevButtons()
